@@ -1,39 +1,83 @@
 ﻿# Employee Attendance & Analytics API
 
-A REST API built with FastAPI and MongoDB for employee management, attendance tracking, and workforce analytics.
+A REST API developed using Python, FastAPI, and MongoDB to manage employee records, track attendance, and generate workforce analytics.
 
 ## Features
 
-- Create and list employees, with department filtering and pagination.
+- Create and list employee records.
+- Filter and paginate employee lists.
 - Record employee punch-in and punch-out.
-- Calculate attendance metrics, including late arrivals and work hours.
-- View monthly and department analytics.
-- Inspect database query plans and indexes.
+- Calculate late arrivals and working hours.
+- Generate monthly attendance and department analytics.
+- Inspect database indexes and query execution plans.
 
-## Tech Stack
+## Technology Stack
 
-Python, FastAPI, Pydantic, MongoDB, PyMongo.
+- Python
+- FastAPI
+- MongoDB
+- PyMongo
+- Pydantic
+- Uvicorn
 
-## Setup
+## Project Structure
 
-1. Create and activate a Python virtual environment.
-2. Install dependencies:
+```text
+employee-attendance/
+├── app/
+│   ├── main.py
+│   ├── employees.py
+│   ├── attendance.py
+│   ├── analytics.py
+│   ├── admin.py
+│   ├── database.py
+│   ├── config.py
+│   └── models.py
+├── performance_test.py
+├── requirements.txt
+├── README.md
+├── REVIEW.md
+├── DECISIONS.md
+└── .gitignore
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## How to Run
 
-3. Create a local `.env` file and configure the MongoDB connection settings expected by `app/database.py`. Never commit this file.
-4. Start the API:
+1. Clone this repository.
+2. Create and activate a Python virtual environment.
+3. Install dependencies:
 
-   ```bash
-   uvicorn app.main:app --reload
-   ```
+   `pip install -r requirements.txt`
 
-5. Open `http://127.0.0.1:8000/docs` for interactive API documentation.
+4. Configure your MongoDB connection using a local `.env` file. Follow the environment variable names expected by the application.
+5. Start the API:
 
-## Project Status
+   `uvicorn app.main:app --reload`
 
-This is a partial submission. The API implementation is in progress. Automated test coverage, authentication and authorization, and production deployment remain future improvements. Verify database connectivity and endpoint behavior in your own environment before relying on the results.
+6. Open `http://127.0.0.1:8000/docs` to explore the API endpoints.
 
-See [REVIEW.md](REVIEW.md) for known limitations and [DECISIONS.md](DECISIONS.md) for implementation choices.
+Never upload `.env` files, database passwords, or other secrets to GitHub.
+
+## Current Project Status
+
+This is a partial submission. The main API modules and performance test script are included in the repository.
+
+The following work remains incomplete or needs further verification:
+
+- Comprehensive automated unit and integration tests.
+- Authentication and role-based authorization.
+- A health endpoint that checks actual database connectivity.
+- Additional validation and error handling for attendance edge cases.
+- Production deployment, monitoring, and rate limiting.
+- Testing the complete application in a clean environment.
+
+The API is intended for development and evaluation, not production use with sensitive employee data without appropriate security controls.
+
+## Documentation
+
+- `REVIEW.md` describes known issues and recommended improvements.
+- `DECISIONS.md` explains the main technical decisions and trade-offs.
+
+## License
+
+No license has been added yet.
