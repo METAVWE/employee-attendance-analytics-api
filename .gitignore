@@ -9,3 +9,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .coverage
+
+# Local backup files
+app/database_backup.py
+app/main_backup.py
